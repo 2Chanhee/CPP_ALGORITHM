@@ -5,30 +5,21 @@ typedef Node *PtrNode;
 
 class Node
 {
-    //friend class List;
 private:
     DataType data;
     PtrNode next;
     PtrNode before;
 
 public:
-    Node(DataType value, PtrNode nxt, PtrNode bfr);
+    Node(DataType value);
     Node(DataType value, PtrNode nxt);
-
+    Node(DataType value, PtrNode nxt, PtrNode bfr);
+    
     DataType getData() {return data;}
     PtrNode getNext()  {return next;}
     PtrNode getBefor() {return before;}
-};
 
-class List
-{
-private:
-    PtrNode head;
-    PtrNode tail;
-    int size;
-
-public:
-    List();
-    void PushBack();
+    void link2front(PtrNode target);
+    void link2rear(PtrNode target);
 };
 # endif

@@ -1,5 +1,19 @@
 # include "../header/node.hpp"
 
+Node::Node(DataType value)
+{
+    data = value;
+    next = nullptr;
+    before = nullptr;
+}
+
+Node::Node(DataType value, PtrNode nxt)
+{
+    data = value;
+    next = nxt;
+    before = nullptr;
+}
+
 Node::Node(DataType value, PtrNode nxt, PtrNode bfr)
 {
     data = value;
@@ -7,15 +21,14 @@ Node::Node(DataType value, PtrNode nxt, PtrNode bfr)
     before = bfr;
 }
 
-Node::Node(DataType value, PtrNode nxt)
+void Node::link2rear(PtrNode target)
 {
-    data = value;
-    next = nxt;
+    target->before = *this;
+    next = target;
 }
 
-List::List()
+void Node::link2front(PtrNode target)
 {
-    head = nullptr;
-    tail = nullptr;
-    int size = 0;
+    target->next = *this;
+    before = target;
 }
