@@ -1,34 +1,25 @@
 # ifndef NODE_H
 # define NODE_H
 typedef int DataType;
-typedef Node *PtrNode;
+//typedef Node *PtrNode;
 
 class Node
 {
-    //friend class List;
 private:
     DataType data;
-    PtrNode next;
-    PtrNode before;
+    Node *next;
+    Node *before;
 
 public:
-    Node(DataType value, PtrNode nxt, PtrNode bfr);
-    Node(DataType value, PtrNode nxt);
-
+    Node(DataType value);
+    Node(DataType value, Node *nxt);
+    Node(DataType value, Node *nxt, Node *bfr);
+    
     DataType getData() {return data;}
-    PtrNode getNext()  {return next;}
-    PtrNode getBefor() {return before;}
-};
+    Node *getNext()  {return next;}
+    Node *getBefor() {return before;}
 
-class List
-{
-private:
-    PtrNode head;
-    PtrNode tail;
-    int size;
-
-public:
-    List();
-    void PushBack();
+    void link2front(Node *target);
+    void link2rear(Node *target);
 };
 # endif
