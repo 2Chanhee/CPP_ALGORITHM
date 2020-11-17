@@ -39,9 +39,14 @@ void Node::setData(DataType temp)
     Empty = false;
 }
 
-Node *getNext();
+Node* Node::getNext()
 {
     return Next;
+}
+
+void Node::setNext(Node *NextNode)
+{
+    Next = NextNode;
 }
 
 void Node::link(Node *NextNode)
@@ -58,14 +63,15 @@ bool Node::isEmpty()
 //List Class
 List::List()
 {
-
+    Head = nullptr;
+    Tail = nullptr;
 }
-List::List(List*)
+
+void insert(DataType temp, int Index)
 {
 
 }
 
-void insert(DataType temp, int Index);
 void List::push(DataType temp)
 {
     Node *NewNode = new Node(temp);
@@ -75,8 +81,12 @@ void List::push(DataType temp)
         this->Head = NewNode;
     }
     else
+    {
         this->Head = NewNode;
+        NewNode->setNext(this->Tail);
+    }
 }
+
 DataType List::pop()
 {
     DataType temp;
@@ -89,19 +99,23 @@ DataType List::pop()
 
     return temp;
 }
+
 DataType List::searchData()
 {
 
 }
+
 void List::sort()
 {
 
 }
+
 void List::swap()
 {
 
 }
+
 void List::printAllNode()
 {
-    
+
 }

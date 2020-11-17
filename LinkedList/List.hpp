@@ -14,6 +14,7 @@ public:
     Node *getNext();
     //friend List;
     void setData(DataType);
+    void setNext(Node*);
     void link(Node*);
     bool isEmpty();
     
@@ -32,7 +33,6 @@ private:
     int Length;
 public:
     List();
-    List(List*);
     void insert(DataType, int);
     void push(DataType);
     DataType pop();
