@@ -8,10 +8,13 @@ private:
     DataType Data;
     Node *Next;
     bool Empty;
+    bool Linked;
 public:
     DataType getData();
+    Node *getNext();
     //friend List;
     void setData(DataType);
+    void link(Node*);
     bool isEmpty();
     
     //Generator
@@ -24,9 +27,13 @@ public:
 class List
 {
 private:
-    Node &Head;
-    Node &Tail;
+    Node *Head;
+    Node *Tail; // Tail is nullptr
+    int Length;
 public:
+    List();
+    List(List*);
+    void insert(DataType, int);
     void push(DataType);
     DataType pop();
     DataType searchData();
