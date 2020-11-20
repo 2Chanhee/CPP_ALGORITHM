@@ -36,9 +36,8 @@ public:
     void insert(DataType, int);
     void push(DataType);
     DataType pop();
-    DataType searchData();
+    int searchData(DataType);
     void sort();
-    void swap();
     void printAllNode();
 };
 

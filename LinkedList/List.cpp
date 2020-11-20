@@ -10,7 +10,6 @@ Node::Node()
     Next = nullptr;
 }
 
-
 Node::Node(DataType temp)
 {
     Empty = false;
@@ -61,6 +60,7 @@ bool Node::isEmpty()
 }
 
 //List Class
+
 List::List()
 {
     Head = nullptr;
@@ -69,7 +69,7 @@ List::List()
 
 void insert(DataType temp, int Index)
 {
-
+    
 }
 
 void List::push(DataType temp)
@@ -100,9 +100,18 @@ DataType List::pop()
     return temp;
 }
 
-DataType List::searchData()
+int List::searchData(DataType temp)
 {
-
+    Node *PtrNode = Head->getNext();
+    int Index = 1;
+    while(Head->getNext() != nullptr)
+    {
+        if (PtrNode->getData() == temp)
+            return Index;
+        PtrNode = PtrNode->getNext();
+        Index++;
+    }
+    return 0;
 }
 
 void List::sort()
@@ -110,12 +119,12 @@ void List::sort()
 
 }
 
-void List::swap()
-{
-
-}
-
 void List::printAllNode()
 {
-
+    Node *PtrNode = Head->getNext();
+    while(PtrNode!= nullptr)
+    {
+        std::cout<<PtrNode->getData()<<" "<<std::endl;
+        PtrNode = PtrNode->getNext();
+    }
 }
