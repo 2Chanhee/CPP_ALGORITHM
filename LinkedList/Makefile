@@ -10,4 +10,4 @@ list.exe: main.o list.o
 	g++ -o list.exe main.o list.o
 
 clean:
-	rm -f main.o list.o list.exe
+	rm -f main.o list.o list.exe list.hpp.gch
