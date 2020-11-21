@@ -124,7 +124,7 @@ void List::printAllNode()
     Node *PtrNode = Head->getNext();
     while(PtrNode!= nullptr)
     {
-        std::cout<<PtrNode->getData()<<" "<<std::endl;
+        std::cout<<PtrNode->getData()<<" ";
         PtrNode = PtrNode->getNext();
     }
 }
